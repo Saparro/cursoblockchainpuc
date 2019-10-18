@@ -26,15 +26,15 @@ pragma solidity 0.5.12;
     
     constructor(
         
-        string memory, nomeTomadorServico,
+        string memory nomeTomadorServico,
         
-        string memory, nomePrestadorServico,
+        string memory nomePrestadorServico,
         
-        uint256, _ValorServicoContratado,
+        uint256 _ValorServicoContratado,
         
-        uint256, _DataEntregaServico,
+        uint256 _DataEntregaServico,
         
-        uint256, _DataValidadeServico
+        uint256 _DataValidadeServico
     
         )
     
