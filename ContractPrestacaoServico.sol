@@ -1,6 +1,6 @@
 pragma solidity 0.5.12;
 
-ContractPrestacaoServico{
+    contract PrestacaoServico { 
     
     string public TomadorServico;
     
@@ -14,27 +14,27 @@ ContractPrestacaoServico{
     
     uint256 public ValorIndenizacao;
     
-      event EntregaServico (uint256 DataEntregaServico)
+      event EntregaServico (uint256 DataEntregaServico);
       
       event RenegociacaoDataValidadeServico (uint NovaDataValidadeServico);
     
     modifier autorizadosRenegociacaoDataValidadeServico () {
-        require (TomadorServico * PrestadorServico) "Operacao Em Comum Acordo Partes";
+        require (TomadorServico * PrestadorServico, "Operacao Em Comum Acordo Partes");
         _; 
     
     }
     
     constructor(
         
-        string memory = nomeTomadorServico,
+        string memory, nomeTomadorServico,
         
-        string memory = nomePrestadorServico,
+        string memory, nomePrestadorServico,
         
-        uint256 = _ValorServicoContratado,
+        uint256, _ValorServicoContratado,
         
-        uint256 = _DataEntregaServico,
+        uint256, _DataEntregaServico,
         
-        uint256 = _DataValidadeServico,
+        uint256, _DataValidadeServico
     
         )
     
@@ -62,9 +62,9 @@ ContractPrestacaoServico{
         function VerificarDataValidadeServico (uint256 DataValidadeServico) public 
         
         {
-            require DataEntregaServico <= DataValidadeServico "Contrato Prestacao Servico Valido"
+            require (DataEntregaServico, DataValidadeServico, "Contrato Prestacao Servico Valido");
             
-            if (DataValidadeServico < DataEntregaServico "Contrato Invalido")
+            if (DataValidadeServico < DataEntregaServico "Contrato Invalido");
         }
         
         function RenegociacaoDataValidadeServico (uint256 NovaDataValidadeServico)
