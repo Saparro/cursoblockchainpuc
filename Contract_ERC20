@@ -29,7 +29,8 @@ contract Owned {
 
 contract Mortal is Owned  {
     function kill() public {
-        if (msg.sender == contractOwner) {
+        if (msg.sender == contractOwner) { // versao mais atualizada require (msg.sender == contractOwner, "Only owner can destroy the contract") 
+        {  
             selfdestruct(contractOwner);
         }
     }
